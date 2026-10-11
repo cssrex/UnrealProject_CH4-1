@@ -69,7 +69,7 @@ void ANBPlayerController::SetChatMessageString(const FString& InChatMessageStrin
 
 void ANBPlayerController::PrintChatMessageString(const FString& InChatMessageString)
 {
-	ChatXFunctionLibrary::MyPrintString(this, InChatMessageString, 10.f);
+	ChatXFunctionLibrary::MyPrintString(this, InChatMessageString, 30.f);
 }
 
 void ANBPlayerController::ClientRPCPrintChatMessageString_Implementation(const FString& InChatMessageString)

@@ -19,7 +19,7 @@ public:
 	FString GetPlayerInfoString();
 
 public:
-	UPROPERTY(Replicated)
+	UPROPERTY(Replicated, BlueprintReadOnly)
 	FString PlayerNameString;
 
 	UPROPERTY(Replicated)

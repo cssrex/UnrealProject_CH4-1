@@ -17,6 +17,11 @@ public:
 	virtual void BeginPlay() override;
 
 public:
+	void StartTurn();
+	void NextTurn();
+
+	bool GetIsGameEnd() const { return bIsGameEnd; }
+
 	void PrintChatMessageString(ANBPlayerController* InChattingPlayerController, const FString& InChatMessageString);
 
 	FString GenerateSecretNumber();
@@ -29,12 +34,21 @@ public:
 
 	void ResetGame();
 
-	void JudgeGame(ANBPlayerController* InChattingPlayerController, int InStrikeCount);
+	bool JudgeGame(ANBPlayerController* InChattingPlayerController, int InStrikeCount);
 
+	UFUNCTION()
+	void TimerCountDown();
 
 protected:
 	FString SecretNumberString;
 
 	TArray<TObjectPtr<ANBPlayerController>> AllPlayerControllers;
 
+	FTimerHandle PlayerTurnTimer;
+
+	bool bIsGameEnd;
+
+	int32 CurrentTurnPlayerIndex;
+
+	int32 MaxLeftTime;
 };
