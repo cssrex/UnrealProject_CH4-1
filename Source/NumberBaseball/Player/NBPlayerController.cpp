@@ -59,6 +59,11 @@ void ANBPlayerController::GetLifetimeReplicatedProps(TArray<class FLifetimePrope
 
 void ANBPlayerController::SetChatMessageString(const FString& InChatMessageString)
 {
+	if (InChatMessageString.IsEmpty())
+	{
+		return;
+	}
+
 	ChatMessageString = InChatMessageString;
 
 	if (IsLocalController() == true)

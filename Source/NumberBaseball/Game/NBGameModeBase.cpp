@@ -42,9 +42,11 @@ void ANBGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	MaxLeftTime = 30;
+	MaxLeftTime = 10;
 
 	ResetGame();
+
+	// UE_LOG(LogTemp, Error, TEXT("%s"), *SecretNumberString);
 }
 
 void ANBGameModeBase::StartTurn()
